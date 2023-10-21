@@ -14,7 +14,7 @@ To start the project, follow these steps:
 1. Start the Docker containers:
 
     ```bash
-    sudo docker-compose up
+    sudo docker compose up
     ```
 
 2. Create a superuser to access the admin panel:

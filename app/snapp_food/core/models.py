@@ -48,7 +48,7 @@ class DelayReports(models.Model):
 
 class DelayQueue(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE)
-    agent = models.ForeignKey(Agent, on_delete=models.CASCADE)
+    agent = models.ForeignKey(Agent, on_delete=models.CASCADE, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

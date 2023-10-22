@@ -17,9 +17,10 @@ To start the project, follow these steps:
     sudo docker compose up
     ```
 
-2. Create a superuser to access the admin panel:
+2. Go to the app shell and create a superuser to access the admin panel:
 
     ```bash
+   sudo docker exec -it snapp-app /bin/sh
     python manage.py createsuperuser
     ```
 
@@ -27,7 +28,7 @@ To start the project, follow these steps:
 
     [http://localhost:8000/admin/](http://localhost:8000/admin/)
 
-4. In the admin panel, create some agents and vendors as needed.
+4. In the admin panel, create some agents, vendors and orders as needed.
 
 ## API Endpoints
 
@@ -41,10 +42,10 @@ curl --location 'http://localhost:8000/api/delay-report/3'
 
 ### Assign Order to Agent
 
-To assign an order to an agent, you can use cURL. Replace the number with the agent ID. Note that if you have a JWT token in the future, you won't need to specify the agent ID.
+To assign a delayed order to an agent, you can use cURL.
 
 ```bash
-curl --location --request POST 'http://localhost:8000/api/assign-order/1'
+curl --location --request POST 'http://localhost:8000/api/assign-order/'
 ```
 
 ### Stores Delay Report

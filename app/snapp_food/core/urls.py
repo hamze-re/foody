@@ -6,7 +6,7 @@ urlpatterns = [
     path(
         "delay-report/<int:order_id>/",
         OrderDelayReport.as_view(),
-        name="order-delay-notification",
+        name="order-delay-report",
     ),
     path("assign-order/", AssignOrderToEmployee.as_view(), name="assign-order-to-employee"),
     path(
